@@ -1,0 +1,8 @@
+bin/*
+!bin/JC3FPV.ini
+release-staging/
+*.obj
+*.lib
+*.exp
+*.log
+command.txt
