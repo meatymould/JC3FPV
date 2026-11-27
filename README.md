@@ -42,16 +42,3 @@ Targets the independently inspected Steam executable with PE timestamp `0x578764
 Run `build.cmd` with Visual Studio 2022/Build Tools, Desktop development with C++ and a Windows SDK installed. The script detects the compiler automatically. No external source dependencies. Eighteen automated checks include high-speed floor and wall impacts, ceiling contact, stable ground contact, unobstructed motion, landing frame-rate agreement and friction impulse bounds. Additional checks cover zero/custom gravity, the optional speed cap and zero-drag coasting. The original seven physics checks cover freefall, directional thrust, no levelling, 30/144 FPS agreement, unrestricted quaternion rotation, rate endpoints and drag. Runtime diagnostics are in `bin/JC3FPV.log`; launcher diagnostics in `bin/launcher.log`.
 
 Developer test bridge: write `test` into `bin/command.txt` to perform a 12-second scripted climb/pitch/roll and restore normal camera. Other one-shot commands: `enable`, `disable`, `reset`, `settings` (toggle settings window), `probe` (six native rays), `collisiontest` (60 m/s drop and camera restore). These are internal validation commands, not an autopilot mode.
-
-## Research and credits
-
-Built with OpenAI Codex. Camera structure independently verified by disassembling the user's executable; public FOV-tool constants and the already installed CinematicTools offset list served as research leads, not copied implementation.
-
-- [Betaflight setup guide](https://betaflight.com/docs/wiki/getting-started/setup-guide): Acro sticks command rotation rate.
-- [Betaflight rate implementation](https://github.com/betaflight/betaflight/blob/master/src/main/fc/rc.c): Actual rate equation independently implemented.
-- [Betaflight tuning notes](https://betaflight.com/docs/wiki/tuning/4-2-Tuning-Notes): rate response and thrust nonlinearity.
-- [Liftoff simulation technology](https://www.liftoff-game.com/liftoff-simulations): physical forces, component response and aerodynamic behavior.
-- [Bodycam official announcements](https://steamcommunity.com/app/2406770/announcements/): Acro drag and TRYP collaboration used as behavioral context.
-- [JustC3 FOV Changer](https://github.com/Mrsuss60/JustC3_FOVChanger): camera manager/FOV layout research lead. No code copied.
-
-No game files, saves, JC3VR code or third-party camera implementation are included in the distributable.
